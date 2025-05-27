@@ -44,7 +44,7 @@ def shopping_cart():
                 except ValueError:
                     print("Please enter a valid, non-negative integer for quantity.")
 
-            # Store item in a dictionary and append to the cart
+        # Step 3: Store item in a dictionary and append to the cart
             item = {
                 "name": name,
                 "price": price,
@@ -52,7 +52,7 @@ def shopping_cart():
             }
             cart.append(item)
 
-        # Step 3: Calculate total cost
+        # Step 4: Calculate total cost
         total = 0
         print("\n--- Shopping Cart Summary ---")
         for item in cart:
@@ -60,7 +60,7 @@ def shopping_cart():
             total += item_total
             print(f"{item['quantity']} x {item['name']} @ ${item['price']:.2f} each = ${item_total:.2f}")
 
-        # Apply discount if applicable
+        # Step 5: Apply discount if applicable
         if total > 100:
             discount = total * 0.1
             total -= discount
@@ -69,7 +69,7 @@ def shopping_cart():
         else:
             print(f"\nTotal cost: ${total:.2f}")
 
-        # Ask if user wants to restart
+        # Step 6: Ask if user wants to restart
         restart = input("\nWould you like to shop again? (yes/no): ").lower()
         if restart == "yes":
             continue
